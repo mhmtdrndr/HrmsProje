@@ -13,19 +13,22 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name="job_titles")
+@Table(name = "employers_activations")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobTitle {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
-	private int id;
-	
-	@Column(name="title")
-	private String title;
-	
-	
 
+public class EmployerActivation {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "employer_id")
+    private int employerId;
+
+    @Column(name = "is_email_confirmed")
+    private boolean isEmail = false;
+
+    @Column(name = "is_employer_activated")
+    private boolean isActive = false;
 }
